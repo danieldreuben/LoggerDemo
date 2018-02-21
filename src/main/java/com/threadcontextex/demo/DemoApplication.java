@@ -15,8 +15,8 @@ public class DemoApplication {
     }
 
     public DemoApplication() {
-    	ThreadContext.put("daniel","testing123");
-    	ThreadContext.put("reuben","testing345");
+    	ThreadContext.put("item-1","testing123");
+    	ThreadContext.put("item-2","testing345");
     	ThreadContext.push("single");
         logger.debug("This is a debug message");
         logger.info("This is an info message");
