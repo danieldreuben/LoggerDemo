@@ -8,11 +8,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 import java.util.Map;
+import com.threadcontextex.demo.ExtLogger;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DemoApplicationTests {
 	private static final Logger logger = LogManager.getLogger(DemoApplication.class);
+
+	private static final ExtLogger extended = ExtLogger.create(DemoApplication.class);
 
 	@Test
 	public void contextLoads() {
@@ -31,6 +35,12 @@ public class DemoApplicationTests {
         logger.info("Test:This is an info message");
         logger.warn("Test:This is a warn message");
         logger.error("Test:This is an error message");    
+	}
+
+	@Test
+	public void loggerTest() {
+		extended.notice("this message will output with the notice logging level");
+
 	}
 
 }
